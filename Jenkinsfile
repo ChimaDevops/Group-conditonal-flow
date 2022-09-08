@@ -3,7 +3,7 @@ pipeline{
 	stages{
 		stage('parallel-level-multibran1'){
             when {
-                branch 'main'
+                branch 'feature'
             }
 			parallel{
 				stage('sub-job1'){
@@ -20,8 +20,8 @@ pipeline{
 			}
 		}
         stage('parallel-leve2'){
-              when {
-                branch 'dev'
+		 when {
+                branch 'develop'
             }
 			parallel{
 				stage('sub-job3'){
@@ -37,9 +37,6 @@ pipeline{
 			}
 		}
         stage('parallel-level3'){
-              when {
-                branch 'feat'
-            }
 			parallel{
 				stage('sub-job5'){
 					steps{
